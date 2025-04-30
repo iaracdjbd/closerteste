@@ -1,5 +1,3 @@
-# closerteste
-Repository created solely and exclusively for the purpose of storing tests for Closer Consulting
 
 
-![image](https://github.com/user-attachments/assets/310679e4-961f-41ed-990f-1e7d3ba8fa42)
+![image](https://github.com/user-attachments/assets/9c13dcfb-0ec6-47fc-9c4e-dc211a8d1c78)
