@@ -1,0 +1,1 @@
+CREATE PROCEDURE SPR_DEL_Curso (@id_curso INT) AS BEGIN DELETE FROM cursos WHERE id_curso = @id_curso; END;
