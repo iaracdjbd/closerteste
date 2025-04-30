@@ -1,0 +1,8 @@
+CREATE PROCEDURE SPR_INS_Professor (
+    @id_professor INT,
+    @nome VARCHAR(100),
+    @especialidade VARCHAR(100)
+) AS
+BEGIN
+    INSERT INTO professores VALUES (@id_professor, @nome, @especialidade);
+END;
