@@ -1,0 +1,9 @@
+CREATE PROCEDURE SPR_INS_Pagamento (
+    @id_pagamento INT,
+    @id_mensalidade INT,
+    @data_pagamento DATE,
+    @valor_pago DECIMAL(10,2)
+) AS
+BEGIN
+    INSERT INTO pagamentos VALUES (@id_pagamento, @id_mensalidade, @data_pagamento, @valor_pago);
+END;
