@@ -1,0 +1,1 @@
+CREATE PROCEDURE SPR_DEL_TurmaDisciplina (@id_turma_disciplina INT) AS BEGIN DELETE FROM turmas_disciplinas WHERE id_turma_disciplina = @id_turma_disciplina; END;
