@@ -1,0 +1,9 @@
+CREATE PROCEDURE SPR_UPD_Usuario (
+    @id_usuario INT,
+    @nome_usuario VARCHAR(50),
+    @senha VARCHAR(255),
+    @perfil VARCHAR(20)
+) AS
+BEGIN
+    UPDATE usuarios SET nome_usuario = @nome_usuario, senha_hash = HASHBYTES('SHA2_256', @senha), perfil = @perfil WHERE id_usuario = @id_usuario;
+END;
