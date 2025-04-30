@@ -1,0 +1,9 @@
+CREATE PROCEDURE SPR_UPD_Turma (
+    @id_turma INT,
+    @id_curso INT,
+    @semestre VARCHAR(10),
+    @id_professor INT
+) AS
+BEGIN
+    UPDATE turmas SET id_curso = @id_curso, semestre = @semestre, id_professor = @id_professor WHERE id_turma = @id_turma;
+END;
