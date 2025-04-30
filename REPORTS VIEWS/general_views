@@ -1,0 +1,46 @@
+-- View: Alunos por Curso
+CREATE VIEW VW_Alunos_Por_Curso AS
+SELECT c.nome AS curso, COUNT(DISTINCT m.id_aluno) AS total_alunos
+FROM cursos c
+JOIN turmas t ON t.id_curso = c.id_curso
+JOIN turmas_disciplinas td ON td.id_turma = t.id_turma
+JOIN matriculas m ON m.id_turma_disciplina = td.id_turma_disciplina
+GROUP BY c.nome;
+
+-- View: Matrículas por Disciplina
+CREATE VIEW VW_Matriculas_Por_Disciplina AS
+SELECT d.nome AS disciplina, COUNT(m.id_matricula) AS total_matriculas
+FROM disciplinas d
+JOIN turmas_disciplinas td ON td.id_disciplina = d.id_disciplina
+JOIN matriculas m ON m.id_turma_disciplina = td.id_turma_disciplina
+GROUP BY d.nome;
+
+-- View: Pagamentos em Atraso
+CREATE VIEW VW_Pagamentos_Em_Atraso AS
+SELECT a.nome, m.vencimento, m.valor
+FROM mensalidades m
+JOIN alunos a ON a.id_aluno = m.id_aluno
+LEFT JOIN pagamentos p ON p.id_mensalidade = m.id_mensalidade
+WHERE p.id_pagamento IS NULL AND m.vencimento < GETDATE();
+
+-- View: Acessos Recentes por Usuário
+CREATE VIEW VW_Acessos_Recentes AS
+SELECT u.nome_usuario, MAX(l.data_acesso) AS ultimo_acesso
+FROM usuarios u
+JOIN logs_acesso l ON l.id_usuario = u.id_usuario
+GROUP BY u.nome_usuario;
+
+-- View: Histórico de Pagamentos por Aluno
+CREATE VIEW VW_Historico_Pagamentos AS
+SELECT a.nome, p.data_pagamento, p.valor_pago
+FROM pagamentos p
+JOIN mensalidades m ON p.id_mensalidade = m.id_mensalidade
+JOIN alunos a ON a.id_aluno = m.id_aluno;
+
+-- View: Disciplinas por Professor
+CREATE VIEW VW_Disciplinas_Por_Professor AS
+SELECT pr.nome AS professor, d.nome AS disciplina
+FROM professores pr
+JOIN turmas t ON pr.id_professor = t.id_professor
+JOIN turmas_disciplinas td ON t.id_turma = td.id_turma
+JOIN disciplinas d ON td.id_disciplina = d.id_disciplina;
