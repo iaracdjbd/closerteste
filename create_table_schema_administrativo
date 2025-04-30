@@ -1,0 +1,17 @@
+##Create Tables - Schema Administrativo##
+
+CREATE TABLE usuarios (
+    id_usuario INT PRIMARY KEY,
+    nome_usuario VARCHAR(50) NOT NULL,
+    senha_hash VARCHAR(255),
+    perfil VARCHAR(20) NOT NULL,
+    CONSTRAINT CK_Usuario_Perfil CHECK (perfil IN ('admin', 'aluno', 'professor')),
+    CONSTRAINT UQ_NomeUsuario UNIQUE (nome_usuario)
+);
+
+CREATE TABLE logs_acesso (
+    id_log INT PRIMARY KEY,
+    id_usuario INT REFERENCES usuarios(id_usuario),
+    data_acesso TIMESTAMP NOT NULL,
+    acao VARCHAR(255) NOT NULL
+);
