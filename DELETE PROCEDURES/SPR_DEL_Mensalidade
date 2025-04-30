@@ -1,0 +1,1 @@
+CREATE PROCEDURE SPR_DEL_Mensalidade (@id_mensalidade INT) AS BEGIN DELETE FROM mensalidades WHERE id_mensalidade = @id_mensalidade; END;
