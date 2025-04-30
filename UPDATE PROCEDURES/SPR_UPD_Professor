@@ -1,0 +1,8 @@
+CREATE PROCEDURE SPR_UPD_Professor (
+    @id_professor INT,
+    @nome VARCHAR(100),
+    @especialidade VARCHAR(100)
+) AS
+BEGIN
+    UPDATE professores SET nome = @nome, especialidade = @especialidade WHERE id_professor = @id_professor;
+END;
