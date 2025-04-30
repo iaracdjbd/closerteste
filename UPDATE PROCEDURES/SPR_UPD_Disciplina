@@ -1,0 +1,8 @@
+CREATE PROCEDURE SPR_UPD_Disciplina (
+    @id_disciplina INT,
+    @nome VARCHAR(100),
+    @carga_horaria INT
+) AS
+BEGIN
+    UPDATE disciplinas SET nome = @nome, carga_horaria = @carga_horaria WHERE id_disciplina = @id_disciplina;
+END;
