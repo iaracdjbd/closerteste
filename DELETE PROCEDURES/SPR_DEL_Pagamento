@@ -1,0 +1,1 @@
+CREATE PROCEDURE SPR_DEL_Pagamento (@id_pagamento INT) AS BEGIN DELETE FROM pagamentos WHERE id_pagamento = @id_pagamento; END;
