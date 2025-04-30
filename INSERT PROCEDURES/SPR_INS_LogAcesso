@@ -1,0 +1,9 @@
+CREATE PROCEDURE SPR_INS_LogAcesso (
+    @id_log INT,
+    @id_usuario INT,
+    @data_acesso TIMESTAMP,
+    @acao VARCHAR(255)
+) AS
+BEGIN
+    INSERT INTO logs_acesso VALUES (@id_log, @id_usuario, @data_acesso, @acao);
+END;
