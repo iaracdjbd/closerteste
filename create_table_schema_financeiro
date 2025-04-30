@@ -1,0 +1,17 @@
+##Create Tables - Schema Financeiro##
+
+CREATE TABLE mensalidades (
+    id_mensalidade INT PRIMARY KEY,
+    id_aluno INT REFERENCES alunos(id_aluno),
+    vencimento DATE NOT NULL,
+    valor DECIMAL(10,2) NOT NULL,
+    CONSTRAINT CK_Mensalidade_Valor CHECK (valor > 0)
+);
+
+CREATE TABLE pagamentos (
+    id_pagamento INT PRIMARY KEY,
+    id_mensalidade INT REFERENCES mensalidades(id_mensalidade),
+    data_pagamento DATE NOT NULL,
+    valor_pago DECIMAL(10,2) NOT NULL,
+    CONSTRAINT CK_Pagamento_Valor CHECK (valor_pago > 0)
+);
