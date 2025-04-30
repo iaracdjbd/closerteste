@@ -1,0 +1,7 @@
+CREATE PROCEDURE SPR_UPD_Curso (
+    @id_curso INT,
+    @nome VARCHAR(100)
+) AS
+BEGIN
+    UPDATE cursos SET nome = @nome WHERE id_curso = @id_curso;
+END;
