@@ -1,0 +1,8 @@
+CREATE PROCEDURE SPR_UPD_TurmaDisciplina (
+    @id_turma_disciplina INT,
+    @id_turma INT,
+    @id_disciplina INT
+) AS
+BEGIN
+    UPDATE turmas_disciplinas SET id_turma = @id_turma, id_disciplina = @id_disciplina WHERE id_turma_disciplina = @id_turma_disciplina;
+END;
