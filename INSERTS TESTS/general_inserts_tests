@@ -1,0 +1,47 @@
+-- DADOS DE EXEMPLO
+
+-- Alunos
+INSERT INTO alunos VALUES (1, 'Ana Silva', '2000-04-10');
+INSERT INTO alunos VALUES (2, 'Bruno Costa', '1999-11-25');
+
+-- Professores
+INSERT INTO professores VALUES (1, 'Carlos Souza', 'Matemática');
+INSERT INTO professores VALUES (2, 'Daniela Rocha', 'História');
+
+-- Cursos
+INSERT INTO cursos VALUES (1, 'Engenharia');
+INSERT INTO cursos VALUES (2, 'História');
+
+-- Disciplinas
+INSERT INTO disciplinas VALUES (1, 'Cálculo I', 60);
+INSERT INTO disciplinas VALUES (2, 'História Moderna', 45);
+
+-- Turmas
+INSERT INTO turmas VALUES (1, 1, '2024.1', 1);
+INSERT INTO turmas VALUES (2, 2, '2024.1', 2);
+
+-- Turmas Disciplinas
+INSERT INTO turmas_disciplinas VALUES (1, 1, 1);
+INSERT INTO turmas_disciplinas VALUES (2, 2, 2);
+
+-- Matrículas
+INSERT INTO matriculas VALUES (1, 1, 1);
+INSERT INTO matriculas VALUES (2, 2, 2);
+INSERT INTO matriculas VALUES (3, 1, 2);
+
+-- Mensalidades
+INSERT INTO mensalidades VALUES (1, 1, '2024-03-10', 800.00);
+INSERT INTO mensalidades VALUES (2, 2, '2024-03-10', 850.00);
+INSERT INTO mensalidades VALUES (3, 1, '2024-02-10', 800.00);
+
+-- Pagamentos
+INSERT INTO pagamentos VALUES (1, 1, '2024-03-05', 800.00);
+INSERT INTO pagamentos VALUES (2, 3, '2024-02-09', 800.00);
+
+-- Usuários
+INSERT INTO usuarios VALUES (1, 'admin', HASHBYTES('SHA2_256', 'admin123'), 'admin');
+INSERT INTO usuarios VALUES (2, 'user_aluno', HASHBYTES('SHA2_256', 'aluno123'), 'aluno');
+
+-- Logs de Acesso
+INSERT INTO logs_acesso VALUES (1, 1, GETDATE(), 'Login no sistema');
+INSERT INTO logs_acesso VALUES (2, 2, DATEADD(DAY, -1, GETDATE()), 'Consulta de notas');
