@@ -1,0 +1,15 @@
+##Create Tables - Schema Pessoal##
+
+CREATE TABLE alunos (
+    id_aluno INT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    data_nascimento DATE NOT NULL,
+    CONSTRAINT CK_Aluno_DataNascimento CHECK (data_nascimento < GETDATE())
+);
+
+CREATE TABLE professores (
+    id_professor INT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    especialidade VARCHAR(100),
+    CONSTRAINT UQ_Professor_Nome UNIQUE (nome)
+);
