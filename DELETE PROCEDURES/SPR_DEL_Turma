@@ -1,0 +1,1 @@
+CREATE PROCEDURE SPR_DEL_Turma (@id_turma INT) AS BEGIN DELETE FROM turmas WHERE id_turma = @id_turma; END;
