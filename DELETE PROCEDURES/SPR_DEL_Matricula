@@ -1,0 +1,1 @@
+CREATE PROCEDURE SPR_DEL_Matricula (@id_matricula INT) AS BEGIN DELETE FROM matriculas WHERE id_matricula = @id_matricula; END;
