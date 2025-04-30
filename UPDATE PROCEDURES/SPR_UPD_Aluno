@@ -1,0 +1,8 @@
+CREATE PROCEDURE SPR_UPD_Aluno (
+    @id_aluno INT,
+    @nome VARCHAR(100),
+    @data_nascimento DATE
+) AS
+BEGIN
+    UPDATE alunos SET nome = @nome, data_nascimento = @data_nascimento WHERE id_aluno = @id_aluno;
+END;
