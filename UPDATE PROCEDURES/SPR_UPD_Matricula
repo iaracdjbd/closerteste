@@ -1,0 +1,8 @@
+CREATE PROCEDURE SPR_UPD_Matricula (
+    @id_matricula INT,
+    @id_aluno INT,
+    @id_turma_disciplina INT
+) AS
+BEGIN
+    UPDATE matriculas SET id_aluno = @id_aluno, id_turma_disciplina = @id_turma_disciplina WHERE id_matricula = @id_matricula;
+END;
