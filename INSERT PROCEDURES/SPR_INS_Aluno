@@ -1,0 +1,8 @@
+CREATE PROCEDURE SPR_INS_Aluno (
+    @id_aluno INT,
+    @nome VARCHAR(100),
+    @data_nascimento DATE
+) AS
+BEGIN
+    INSERT INTO alunos VALUES (@id_aluno, @nome, @data_nascimento);
+END;
