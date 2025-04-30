@@ -1,0 +1,8 @@
+CREATE PROCEDURE SPR_INS_Matricula (
+    @id_matricula INT,
+    @id_aluno INT,
+    @id_turma_disciplina INT
+) AS
+BEGIN
+    INSERT INTO matriculas VALUES (@id_matricula, @id_aluno, @id_turma_disciplina);
+END;
