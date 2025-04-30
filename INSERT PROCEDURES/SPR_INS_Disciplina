@@ -1,0 +1,8 @@
+CREATE PROCEDURE SPR_INS_Disciplina (
+    @id_disciplina INT,
+    @nome VARCHAR(100),
+    @carga_horaria INT
+) AS
+BEGIN
+    INSERT INTO disciplinas VALUES (@id_disciplina, @nome, @carga_horaria);
+END;
