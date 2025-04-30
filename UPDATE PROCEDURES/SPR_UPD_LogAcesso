@@ -1,0 +1,9 @@
+CREATE PROCEDURE SPR_UPD_LogAcesso (
+    @id_log INT,
+    @id_usuario INT,
+    @data_acesso TIMESTAMP,
+    @acao VARCHAR(255)
+) AS
+BEGIN
+    UPDATE logs_acesso SET id_usuario = @id_usuario, data_acesso = @data_acesso, acao = @acao WHERE id_log = @id_log;
+END;
