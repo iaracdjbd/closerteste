@@ -1,0 +1,9 @@
+CREATE PROCEDURE SPR_UPD_Mensalidade (
+    @id_mensalidade INT,
+    @id_aluno INT,
+    @vencimento DATE,
+    @valor DECIMAL(10,2)
+) AS
+BEGIN
+    UPDATE mensalidades SET id_aluno = @id_aluno, vencimento = @vencimento, valor = @valor WHERE id_mensalidade = @id_mensalidade;
+END;
