@@ -1,0 +1,36 @@
+##Create Tables - Schema Academico##
+
+CREATE TABLE cursos (
+    id_curso INT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    CONSTRAINT UQ_Curso_Nome UNIQUE (nome)
+);
+
+CREATE TABLE disciplinas (
+    id_disciplina INT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    carga_horaria INT,
+    CONSTRAINT CK_Disciplina_CargaHoraria CHECK (carga_horaria > 0)
+);
+
+CREATE TABLE turmas (
+    id_turma INT PRIMARY KEY,
+    id_curso INT REFERENCES cursos(id_curso),
+    semestre VARCHAR(10) NOT NULL,
+    id_professor INT REFERENCES professores(id_professor),
+    CONSTRAINT CK_Turma_Semestre CHECK (semestre LIKE '[1-2]%.20[0-9][0-9]')
+);
+
+CREATE TABLE turmas_disciplinas (
+    id_turma_disciplina INT PRIMARY KEY,
+    id_turma INT REFERENCES turmas(id_turma),
+    id_disciplina INT REFERENCES disciplinas(id_disciplina),
+    CONSTRAINT UQ_Turma_Disciplina UNIQUE (id_turma, id_disciplina)
+);
+
+CREATE TABLE matriculas (
+    id_matricula INT PRIMARY KEY,
+    id_aluno INT REFERENCES alunos(id_aluno),
+    id_turma_disciplina INT REFERENCES turmas_disciplinas(id_turma_disciplina),
+    CONSTRAINT UQ_Matricula UNIQUE (id_aluno, id_turma_disciplina)
+);
