@@ -1,0 +1,9 @@
+CREATE PROCEDURE SPR_INS_Mensalidade (
+    @id_mensalidade INT,
+    @id_aluno INT,
+    @vencimento DATE,
+    @valor DECIMAL(10,2)
+) AS
+BEGIN
+    INSERT INTO mensalidades VALUES (@id_mensalidade, @id_aluno, @vencimento, @valor);
+END;
