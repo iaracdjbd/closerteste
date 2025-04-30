@@ -1,0 +1,8 @@
+CREATE PROCEDURE SPR_INS_TurmaDisciplina (
+    @id_turma_disciplina INT,
+    @id_turma INT,
+    @id_disciplina INT
+) AS
+BEGIN
+    INSERT INTO turmas_disciplinas VALUES (@id_turma_disciplina, @id_turma, @id_disciplina);
+END;
