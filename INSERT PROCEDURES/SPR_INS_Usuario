@@ -1,0 +1,9 @@
+CREATE PROCEDURE SPR_INS_Usuario (
+    @id_usuario INT,
+    @nome_usuario VARCHAR(50),
+    @senha VARCHAR(255),
+    @perfil VARCHAR(20)
+) AS
+BEGIN
+    INSERT INTO usuarios VALUES (@id_usuario, @nome_usuario, HASHBYTES('SHA2_256', @senha), @perfil);
+END;
