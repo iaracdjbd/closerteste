@@ -1,0 +1,9 @@
+CREATE PROCEDURE SPR_INS_Turma (
+    @id_turma INT,
+    @id_curso INT,
+    @semestre VARCHAR(10),
+    @id_professor INT
+) AS
+BEGIN
+    INSERT INTO turmas VALUES (@id_turma, @id_curso, @semestre, @id_professor);
+END;
