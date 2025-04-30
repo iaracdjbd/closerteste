@@ -1,0 +1,7 @@
+CREATE PROCEDURE SPR_INS_Curso (
+    @id_curso INT,
+    @nome VARCHAR(100)
+) AS
+BEGIN
+    INSERT INTO cursos VALUES (@id_curso, @nome);
+END;
